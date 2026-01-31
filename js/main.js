@@ -2,21 +2,14 @@
 /*global $, window, location, CSInterface, SystemPath, themeManager*/
 
 (function () {
-    'use strict';
-
-    var csInterface = new CSInterface();
-    
-    
-    function init() {
-                
-        themeManager.init();
-                
-        $("#btn_test").click(function () {
-            csInterface.evalScript('sayHello()');
-        });
-    }
-        
-    init();
-
+  'use strict';
+  var csInterface = new CSInterface();
+  function init() {
+    themeManager.init();
+    $("#btn_test").click(function () {
+      csInterface.evalScript('sayHello()');
+    });
+  }
+  init();
 }());
     
