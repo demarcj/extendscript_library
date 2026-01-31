@@ -1,7 +1,4 @@
-var i;
-var proj = app.project;
-var current_comp = proj.activeItem;
-var comp = {};
+declare var app: any;
 
 var trim_comp_to_work_area = function() { app.executeCommand(2360) };
 var add_footage_to_comp = function() { app.executeCommand(2005) };
