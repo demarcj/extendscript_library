@@ -1,4 +1,4 @@
-String.prototype.includes = function(search, start) {
+String.prototype.includes = function(search: any, start) {
   'use strict';
 
   if (search instanceof RegExp) {
@@ -8,7 +8,7 @@ String.prototype.includes = function(search, start) {
   return this.indexOf(search, start) !== -1;
 };
 
-String.prototype.replaceAll = function (search, replacement) {
+String.prototype.replaceAll = function (search, replacement: any) {
   if (this == null) {
       throw new TypeError('String.prototype.replaceAll called on null or undefined');
   }
