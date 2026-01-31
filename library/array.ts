@@ -1,4 +1,4 @@
-Array.prototype.filter = function(callback, context) {
+Array.prototype.filter = function(callback: any, context: any) {
   var arr = [];
   for (var i = 0; i < this.length; i++) {
     if (callback.call(context, this[i], i, this)) {

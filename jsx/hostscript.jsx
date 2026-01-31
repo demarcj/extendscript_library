@@ -1,6 +1,6 @@
 "use strict";
 
-// library/array.jsx
+// library/array.ts
 Array.prototype.filter = function(callback, context) {
   var arr = [];
   for (var i = 0; i < this.length; i++) {
@@ -41,7 +41,7 @@ Array.prototype.some = function(callback, thisArg) {
   return false;
 };
 
-// library/object.jsx
+// library/object.ts
 Object.keys = (function() {
   "use strict";
   var hasOwnProperty = Object.prototype.hasOwnProperty, hasDontEnumBug = !{ toString: null }.propertyIsEnumerable("toString"), dontEnums = [
@@ -105,7 +105,7 @@ Object.values = (function() {
   };
 })();
 
-// library/string.jsx
+// library/string.ts
 String.prototype.includes = function(search, start) {
   "use strict";
   if (search instanceof RegExp) {
@@ -140,5 +140,5 @@ String.prototype.replaceAll = function(search, replacement) {
 
 // index.ts
 var sayHello = function() {
-  alert("hello from ExtendScript");
+  alert("Hello from ExtendScript");
 };

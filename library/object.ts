@@ -52,7 +52,7 @@ Object.values = (function() {
       ],
       dontEnumsLength = dontEnums.length;
 
-  return function(obj) {
+  return function(obj: any) {
     if (typeof obj !== 'function' && (typeof obj !== 'object' || obj === null)) {
       throw new TypeError('Object.keys called on non-object');
     }
