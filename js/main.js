@@ -1,15 +1,12 @@
-/*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
-/*global $, window, location, CSInterface, SystemPath, themeManager*/
-
-(function () {
+(() => {
   'use strict';
-  var csInterface = new CSInterface();
-  function init() {
+  const csInterface = new CSInterface();
+
+  const init = () => {
     themeManager.init();
-    $("#btn_test").click(function () {
-      csInterface.evalScript('sayHello()');
-    });
+    const btn_test = document.querySelector("#btn_test");
+    btn_test.addEventListener(`click`, () => csInterface.evalScript('sayHello()'));
   }
   init();
-}());
+})();
     
