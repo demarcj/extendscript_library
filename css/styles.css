@@ -1,51 +1,52 @@
 /*Your styles*/
 
  body {
-    margin: 10px;
+  margin: 10px;
 }
-
 
 #content {
-    margin-right:auto;
-    margin-left:auto;
-    vertical-align:middle;
-    width:100%;
+  margin-right:auto;
+  margin-left:auto;
+  vertical-align:middle;
+  width:100%;
 }
-
 
 #btn_test{
-    width: 100%;
+  width: 100%;
 }
 
-
+input[type]{
+  opacity: 1;
+  position: static;
+}
 
 
 /*
 Those classes will be edited at runtime with values specified
 by the settings of the CC application
 */
-.hostFontColor{}
+/* .hostFontColor{}
 .hostFontFamily{}
-.hostFontSize{}
+.hostFontSize{} */
 
 /*font family, color and size*/
-.hostFont{}
+/* .hostFont{} */
 /*background color*/
-.hostBgd{}
+/* .hostBgd{} */
 /*lighter background color*/
-.hostBgdLight{}
+/* .hostBgdLight{} */
 /*darker background color*/
-.hostBgdDark{}
+/* .hostBgdDark{} */
 /*background color and font*/
-.hostElt{}
+/* .hostElt{} */
 
 
 .hostButton{
-    border:1px solid;
-    border-radius:2px;
-    height:20px;
-    vertical-align:bottom;
-    font-family:inherit;
-    color:inherit;
-    font-size:inherit;
+  border:1px solid;
+  border-radius:2px;
+  height:20px;
+  vertical-align:bottom;
+  font-family:inherit;
+  color:inherit;
+  font-size:inherit;
 }
