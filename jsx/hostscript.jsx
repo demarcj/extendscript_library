@@ -140,5 +140,5 @@ String.prototype.replaceAll = function(search, replacement) {
 
 // index.ts
 var sayHello = function() {
-  alert("Hello from ExtendScript");
+  return alert("Hello from ExtendScript");
 };
