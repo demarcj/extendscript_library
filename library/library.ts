@@ -1,5 +1,3 @@
-import "./type.ts";
-
 export var print = (function () {
   var arr: unknown[] = [];
   for (var i = 0; i < arguments.length; i++) {
