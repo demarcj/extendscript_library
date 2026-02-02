@@ -1,4 +1,3 @@
-import "./type.ts";
 export var project = app.project;
 export var active_comp = () => project?.activeItem;
 export var selected_layers = () => active_comp()?.selectedLayers;
@@ -17,7 +16,7 @@ export var has_active_comp = (): boolean => {
 
 export var has_selected_layer = (): boolean => {
   try{
-    if(!(selected_layers()?.length === 1)){
+    if(!selected_layers()?.length){
       throw new Error("No layer selected");
     }
     return true;
@@ -29,7 +28,7 @@ export var has_selected_layer = (): boolean => {
 
 export var has_single_selected_layer = (): boolean => {
   try{
-    if(!selected_layers()?.[1]){
+    if(selected_layers()?.length && !(selected_layers()?.length === 1)){
       throw new Error("Has multiple layers selected");
     }
     return true;
