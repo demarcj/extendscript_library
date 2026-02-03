@@ -12,7 +12,10 @@
     "noEmitHelpers": true,
 
     "noUnusedLocals": false,
-    "noUnusedParameters": true
+    "noUnusedParameters": false
   },
-  "include": ["jsx/**/*.ts"]
+  "include": [
+    "index.ts",
+    "library/**/*.d.ts"
+  ]
 }
