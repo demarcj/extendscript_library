@@ -1,6 +1,6 @@
-import "./library/object.ts";
-import "./library/string.ts";
-import "./library/array.ts";
-import * as lib from "./library/library.ts";
+import "./library/object";
+import "./library/string";
+import "./library/array";
+import * as lib from "./library/library";
 
 var sayHello = () => alert("Hello from ExtendScript");

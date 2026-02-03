@@ -92,3 +92,31 @@ if (!Array.prototype.some) {
     return false;
   };
 }
+
+if (!Array.prototype.fill) {
+  Array.prototype.fill = function (value, start, end) {
+    if (this == null) {
+      throw new TypeError('Array.prototype.fill called on null or undefined');
+    }
+
+    var O = Object(this);
+    var len = O.length >>> 0;
+
+    var relativeStart = start === undefined ? 0 : start >> 0; // to integer
+    var k = relativeStart < 0
+      ? Math.max(len + relativeStart, 0)
+      : Math.min(relativeStart, len);
+
+    var relativeEnd = end === undefined ? len : end >> 0;
+    var the_final = relativeEnd < 0
+      ? Math.max(len + relativeEnd, 0)
+      : Math.min(relativeEnd, len);
+
+    while (k < the_final) {
+      O[k] = value;
+      k++;
+    }
+
+    return O;
+  };
+}

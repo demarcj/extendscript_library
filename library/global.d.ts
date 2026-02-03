@@ -54,6 +54,11 @@ interface CompItem {
   layers: LayerCollection;
 
   time: number;
+
+  /** 1-based index */
+  layer(index: number): Layer;
+  /** Finds the first layer with this name (topmost match). Returns null if not found. */
+  layer(name: string): Layer | null;
 }
 
 
@@ -237,3 +242,10 @@ declare var ParagraphJustification: {
 // Make the global `app` typed
 declare var app: App;
 
+interface JSON {
+  stringify(value: any): string;
+}
+
+declare var JSON: JSON;
+
+declare var alert: (str: string) => void

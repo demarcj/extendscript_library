@@ -21,6 +21,8 @@ declare global {
       callbackfn: (value: T, index: number, array: T[]) => boolean,
       thisArg?: any
     ): boolean;
+
+    fill(value: T, start?: number, end?: number): T[];
   }
 }
 
