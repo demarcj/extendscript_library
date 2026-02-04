@@ -64,6 +64,12 @@ export var is_text_layer = (): boolean => {
 
 export var check_error = (check_func: (() => boolean)[]) => check_func.some((confirm) => !confirm());
 
+export var error_message = (name: string) => alert(`
+  The ${name} operation failed.
+  Some changes may have been applied.
+  Use Undo to revert the action if necessary. 
+`);
+
 export var print = (function () {
   var arr: unknown[] = [];
   for (var i = 0; i < arguments.length; i++) {
