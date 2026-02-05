@@ -1,14 +1,9 @@
-/* JSON.stringify polyfill (ExtendScript / ES3 safe) */
-var g: any = (function (this: any) {
-  return this;
-})(); // ExtendScript-friendly global
-
-if (typeof g.JSON !== "object") {
-  g.JSON = {};
+if (typeof JSON !== "object") {
+  JSON = {} as JSON;
 }
 
-if (typeof g.JSON.stringify !== "function") {
-  g.JSON.stringify = function (value: any): string {
+if (typeof JSON.stringify !== "function") {
+  JSON.stringify = function (value: any): string {
 
     function quote(str: string): string {
       return '"' + str
