@@ -1,4 +1,7 @@
 /*Your styles*/
+html{
+  height: 100vh;
+}
 
  body {
   margin: 10px;
