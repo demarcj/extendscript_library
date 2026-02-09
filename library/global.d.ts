@@ -167,6 +167,8 @@ interface AVLayer extends Layer {
   audioEnabled: boolean;
   motionBlur: boolean;
   collapseTransformation: boolean;
+  property(name: "ADBE Time Remapping"): TimeRemapProperty;
+  timeRemapEnabled: boolean;
 }
 
 interface TextLayer extends AVLayer {
@@ -231,6 +233,47 @@ interface PropertyGroup {
 
   // Common AE checks
   canAddProperty?: boolean;
+}
+
+interface TimeRemapProperty extends Property {
+  // Base Property info
+  name: string;
+  matchName: "ADBE Time Remapping";
+  parentProperty: PropertyGroup | null;
+
+  // Value
+  value: number;
+
+  // Keyframe data
+  numKeys: number;
+  isTimeVarying: boolean;
+
+  // Value access
+  setValue(value: number): void;
+  setValueAtTime(time: number, value: number): void;
+  valueAtTime(time: number, preExpression?: boolean): number;
+
+  // Keyframe inspection
+  keyTime(index: number): number;
+  keyValue(index: number): number;
+  nearestKeyIndex(time: number): number;
+
+  // Interpolation
+  setInterpolationTypeAtKey(
+    index: number,
+    inType: KeyframeInterpolationType,
+    outType: KeyframeInterpolationType
+  ): void;
+
+  // Optional (exists but rarely needed)
+  expression?: string;
+  canSetExpression?: boolean;
+}
+
+declare var KeyframeInterpolationType: {
+  LINEAR: number;
+  BEZIER: number;
+  HOLD: number;
 }
 
 declare var ParagraphJustification: {

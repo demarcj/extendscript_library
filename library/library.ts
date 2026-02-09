@@ -2,6 +2,9 @@ export var project = app.project;
 export var active_comp = () => project?.activeItem;
 export var selected_layers = () => active_comp()?.selectedLayers;
 export var selected_layer = () => selected_layers()?.[0];
+export var all_layers: () => (Layer | undefined)[] = () => Array(active_comp()?.layers.length)
+  .fill(undefined)
+  .map((layer, i) => active_comp()?.layer(i + 1));
 export var has_active_comp = (): boolean => {
   try{
     if(!project?.activeItem){

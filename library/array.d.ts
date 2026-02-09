@@ -23,6 +23,11 @@ declare global {
     ): boolean;
 
     fill(value: T, start?: number, end?: number): T[];
+
+    find(
+      predicate: (value: T, index: number, obj: T[]) => boolean,
+      thisArg?: any
+    ): T | undefined;
   }
 }
 
