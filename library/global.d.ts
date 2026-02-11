@@ -49,6 +49,8 @@ interface CompItem {
   pixelAspect: number;
   frameRate: number;
   duration: number;
+  workAreaDuration: number;
+  workAreaStart: number;
 
   selectedLayers: Layer[];
   layers: LayerCollection;
@@ -291,4 +293,11 @@ interface JSON {
 
 declare var JSON: JSON;
 
-declare var alert: (str: string) => void
+declare var alert: (message: any) => void;
+
+declare var confirm: (message: any) => boolean;
+
+declare var prompt: (
+  message?: any,
+  defaultValue?: string
+) => string | null;
