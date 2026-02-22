@@ -61,6 +61,8 @@ interface CompItem {
   layer(index: number): Layer;
   /** Finds the first layer with this name (topmost match). Returns null if not found. */
   layer(name: string): Layer | null;
+
+  markerProperty: Property;
 }
 
 
@@ -174,7 +176,7 @@ interface AVLayer extends Layer {
 }
 
 interface TextLayer extends AVLayer {
-  property(name: "Source Text"): Property;
+  property(name: string): Property;
 }
 
 interface ShapeLayer extends AVLayer {}
@@ -189,7 +191,8 @@ interface Property {
   keyTime(index: number): number;
   keyValue(index: number): any;
   removeKey(index: number): void;
-
+  property(name: string): Property;
+  expression: string;
   isTimeVarying: boolean;
 }
 
@@ -282,7 +285,38 @@ declare var ParagraphJustification: {
   LEFT_JUSTIFY: number;
   CENTER_JUSTIFY: number;
   RIGHT_JUSTIFY: number;
-};
+}
+
+interface File {
+  absoluteURI: string;
+  exists: boolean;
+  encoding: string;
+  eof: boolean;
+  error: string;
+
+  open(mode: "r" | "w" | "e"): boolean;
+  close(): boolean;
+  read(): string;
+  readln(): string;
+  write(content: string): boolean;
+  remove(): boolean;
+}
+
+declare var File: {
+  new(path?: string): File;
+  openDialog(prompt?: string, filter?: string): File | null;
+  saveDialog(prompt?: string, filter?: string): File | null;
+}
+
+declare class MarkerValue {
+  constructor(comment?: string);
+  comment: string;
+  chapter: string;
+  url: string;
+  duration: number;
+  parameters: any;
+  clone(): MarkerValue;
+}
 
 // Make the global `app` typed
 declare var app: App;
