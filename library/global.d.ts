@@ -62,7 +62,7 @@ interface CompItem {
   /** Finds the first layer with this name (topmost match). Returns null if not found. */
   layer(name: string): Layer | null;
 
-  markerProperty: Property;
+  markerProperty: MarkerProperty;
 }
 
 
@@ -163,6 +163,7 @@ interface Layer {
   moveToEnd(): void;
 
   // Properties
+  property(name: `Source Text`): Property;
   property(nameOrIndex: string | number): Property | PropertyGroup;
 }
 
@@ -173,6 +174,7 @@ interface AVLayer extends Layer {
   collapseTransformation: boolean;
   property(name: "ADBE Time Remapping"): TimeRemapProperty;
   timeRemapEnabled: boolean;
+  marker: MarkerProperty;
 }
 
 interface TextLayer extends AVLayer {
@@ -192,7 +194,7 @@ interface Property {
   keyValue(index: number): any;
   removeKey(index: number): void;
   property(name: string): Property;
-  expression: string;
+  expression?: string;
   isTimeVarying: boolean;
 }
 
@@ -308,13 +310,21 @@ declare var File: {
   saveDialog(prompt?: string, filter?: string): File | null;
 }
 
-declare class MarkerValue {
+interface MarkerProperty extends Property{
+  numKeys: number;
+  keyValue(index: number): MarkerValue;
+  keyTime(index: number): number;
+  setValueAtTime(time: number, value: MarkerValue): void;
+}
+
+declare class MarkerValue extends MarkerProperty {
   constructor(comment?: string);
   comment: string;
   chapter: string;
+  cuePointName: string;
   url: string;
+  frameTarget: string;
   duration: number;
-  parameters: any;
   clone(): MarkerValue;
 }
 
