@@ -65,6 +65,10 @@ interface CompItem {
   markerProperty: MarkerProperty;
 }
 
+declare var CompItem: {
+  prototype: CompItem;
+  new (...args: any[]): CompItem;
+};
 
 interface Preferences {
   getPrefAsString(section: string, key: string): string;

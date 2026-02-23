@@ -9,7 +9,7 @@ export var all_layers: () => (Layer | undefined)[] = () => Array(active_comp()?.
 
 export var has_active_comp = (): boolean => {
   try{
-    if(!active_comp()){
+    if(!(active_comp() && active_comp() instanceof CompItem)){
       throw new Error("No comp was selected");
     }
     return true;
