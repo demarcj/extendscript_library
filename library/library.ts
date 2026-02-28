@@ -3,7 +3,7 @@ export var active_comp = () => project?.activeItem;
 export var time = () => active_comp()?.time || 0;
 export var selected_layers = () => active_comp()?.selectedLayers;
 export var selected_layer = () => selected_layers()?.[0];
-export var all_layers: () => (Layer | undefined)[] = () => Array(active_comp()?.layers.length)
+export var all_layers: () => (AllLayerType | undefined)[] = () => Array(active_comp()?.layers.length || 0)
   .fill(undefined)
   .map((layer, i) => active_comp()?.layer(i + 1));
 
