@@ -1,4 +1,5 @@
 // app.d.ts
+type AllLayerType = Layer & AVLayer & TextLayer & ShapeLayer;
 
 interface App {
   // --- Core ---
@@ -52,13 +53,13 @@ interface CompItem {
   workAreaDuration: number;
   workAreaStart: number;
 
-  selectedLayers: Layer[];
+  selectedLayers: AllLayerType[];
   layers: LayerCollection;
 
   time: number;
 
   /** 1-based index */
-  layer(index: number): Layer;
+  layer(index: number): AllLayerType;
   /** Finds the first layer with this name (topmost match). Returns null if not found. */
   layer(name: string): Layer | null;
 
@@ -136,11 +137,15 @@ interface LayerCollection {
 interface Layer {
   index: number;
   name: string;
+  matchName: string;
+
   enabled: boolean;
   shy: boolean;
   locked: boolean;
   selected: boolean;
   solo: boolean;
+  hasVideo: boolean;
+  hasAudio: boolean;
 
   parent: Layer | null;
   hasParent: boolean;
@@ -167,7 +172,6 @@ interface Layer {
   moveToEnd(): void;
 
   // Properties
-  property(name: `Source Text`): Property;
   property(nameOrIndex: string | number): Property | PropertyGroup;
 }
 
@@ -175,6 +179,7 @@ interface AVLayer extends Layer {
   source: AVItem | null;
   audioEnabled: boolean;
   motionBlur: boolean;
+  opacity: Property;
   collapseTransformation: boolean;
   property(name: "ADBE Time Remapping"): TimeRemapProperty;
   timeRemapEnabled: boolean;
@@ -182,7 +187,7 @@ interface AVLayer extends Layer {
 }
 
 interface TextLayer extends AVLayer {
-  property(name: string): Property;
+  property(name: `Source Text`): Property;
 }
 
 interface ShapeLayer extends AVLayer {}
