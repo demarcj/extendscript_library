@@ -113,7 +113,7 @@ interface LayerCollection {
   length: number;
 
   // 1-based indexing
-  [index: number]: Layer;
+  [index: number]: AllLayerType;
 
   add(
     item: AVItem,
