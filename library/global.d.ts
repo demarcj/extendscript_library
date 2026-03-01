@@ -147,7 +147,7 @@ interface Layer {
   hasVideo: boolean;
   hasAudio: boolean;
 
-  parent: Layer | null;
+  parent: AllLayerType | null;
   hasParent: boolean;
 
   inPoint: number;
@@ -164,15 +164,15 @@ interface Layer {
   threeDLayer: boolean;
 
   // Core methods
-  duplicate(): Layer;
+  duplicate(): AllLayerType;
   remove(): void;
-  moveBefore(layer: Layer): void;
-  moveAfter(layer: Layer): void;
+  moveBefore(layer: AllLayerType): void;
+  moveAfter(layer: AllLayerType): void;
   moveToBeginning(): void;
   moveToEnd(): void;
 
   // Properties
-  property(nameOrIndex: string | number): Property | PropertyGroup;
+  property(nameOrIndex: string | number): Property & PropertyGroup;
 }
 
 interface AVLayer extends Layer {
@@ -187,7 +187,7 @@ interface AVLayer extends Layer {
 }
 
 interface TextLayer extends AVLayer {
-  property(name: `Source Text`): Property;
+  property(name: `Source Text` | `ADBE Text Properties`): Property;
 }
 
 interface ShapeLayer extends AVLayer {}
@@ -245,7 +245,7 @@ interface PropertyGroup {
 
   numProperties: number;
 
-  property(indexOrName: number | string): Property | PropertyGroup;
+  property(indexOrName: number | string): Property & PropertyGroup;
 
   // Common AE checks
   canAddProperty?: boolean;
