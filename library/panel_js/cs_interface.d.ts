@@ -4,5 +4,4 @@ declare class CSInterface {
 
 declare var themeManager: {
   init(): void;
-};
-
+}

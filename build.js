@@ -1,7 +1,7 @@
 const esbuild = require("esbuild");
 
 esbuild.build({
-  entryPoints: ["./index.ts"],
+  entryPoints: ["./ts/hostscript.ts"],
   bundle: true,
   outfile: "jsx/hostscript.jsx",
 
@@ -16,7 +16,7 @@ esbuild.build({
 }).catch(() => process.exit(1));
 
 esbuild.build({
-  entryPoints: ["./main.ts"],
+  entryPoints: ["./ts/main.ts"],
   bundle: true,
   outfile: "js/main.js",
 

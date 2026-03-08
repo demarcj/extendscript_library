@@ -1,12 +1,14 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "composite": true,
     "target": "ES2017",
-    "module": "ESNext",
-    "lib": ["ES2017", "DOM"]
+    "module": "none",
+    "lib": ["ES2017", "DOM"],
+    "noEmit": false
   },
   "include": [
-    "library/cs_interface.d.ts",
-    "main.ts"
+    "library/panel_js/**/*.d.ts",
+    "ts/main.ts"
   ]
 }
