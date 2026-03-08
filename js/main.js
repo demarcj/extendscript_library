@@ -2,10 +2,10 @@
 (() => {
   // main.ts
   var csInterface = new CSInterface();
-  var init = () => {
+  var ini = () => {
     themeManager.init();
     const btn_test = document.querySelector("#btn_test");
     btn_test.addEventListener(`click`, () => csInterface.evalScript("sayHello()"));
   };
-  init();
+  ini();
 })();
