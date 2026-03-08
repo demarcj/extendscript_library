@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "lib": ["ES5"]
+  },
+  "include": [
+    "index.ts",
+    "library/**/*.d.ts"
+  ],
+  "exclude": [
+    "library/cs_interface.d.ts"
+  ]
+}
