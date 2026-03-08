@@ -1,5 +1,5 @@
 {
-  "name": "com.demarc.smartrazor.panel",
+  "name": "com.framework.panel",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +15,8 @@
     "@babel/preset-env": "^7.28.6",
     "esbuild": "^0.27.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/es6-promise": "^0.0.33"
   }
 }

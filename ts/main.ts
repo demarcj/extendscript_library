@@ -7,4 +7,3 @@ const init = () => {
   btn_test.addEventListener(`click`, () => csInterface.evalScript('sayHello()'));
 }
 init();
-    

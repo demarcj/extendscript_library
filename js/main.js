@@ -1,11 +1,10 @@
-"use strict";
 (() => {
-  // main.ts
+  // ts/main.ts
   var csInterface = new CSInterface();
-  var ini = () => {
+  var init = () => {
     themeManager.init();
     const btn_test = document.querySelector("#btn_test");
     btn_test.addEventListener(`click`, () => csInterface.evalScript("sayHello()"));
   };
-  ini();
+  init();
 })();

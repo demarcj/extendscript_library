@@ -1,6 +1,4 @@
-"use strict";
-
-// library/object.ts
+// library/extendscript/object.ts
 if (!Object.keys) {
   Object.keys = (function() {
     "use strict";
@@ -78,7 +76,7 @@ if (!Object.values) {
   })();
 }
 
-// library/string.ts
+// library/extendscript/string.ts
 if (!String.prototype.includes) {
   String.prototype.includes = function(searchString, position) {
     "use strict";
@@ -128,7 +126,7 @@ if (!String.prototype.replaceAll) {
   };
 }
 
-// library/array.ts
+// library/extendscript/array.ts
 if (!Array.prototype.filter) {
   Array.prototype.filter = function(callbackfn, thisArg) {
     var arr = [];
@@ -233,7 +231,7 @@ if (!Array.prototype.find) {
   };
 }
 
-// library/json.ts
+// library/extendscript/json.ts
 if (typeof JSON !== "object") {
   JSON = {};
 }
@@ -269,7 +267,7 @@ if (typeof JSON.stringify !== "function") {
   };
 }
 
-// index.ts
+// ts/hostscript.ts
 var sayHello = function() {
   return alert("Hello from ExtendScript");
 };
