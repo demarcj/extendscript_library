@@ -8,7 +8,7 @@
     "noEmit": false
   },
   "include": [
-    "library/panel_js/**/*.d.ts",
+    "ts/library/cep_panel/**/*.d.ts",
     "ts/main.ts"
   ]
 }
