@@ -1,23 +1,25 @@
-/*Your styles*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html{
   height: 100vh;
+  overflow-x: hidden;
   display: grid;
+  grid-template-rows: 1fr;
 }
 
 body{
-  margin: 10px;
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-#content {
-  margin-right: auto;
-  margin-left: auto;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-}
-
-#btn_test{
-  width: 100%;
+#content{
+  display: grid;
 }
 
 input[type]{
@@ -25,7 +27,6 @@ input[type]{
   position: static;
   margin: 0;
 }
-
 
 /*
 Those classes will be edited at runtime with values specified
